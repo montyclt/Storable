@@ -46,6 +46,14 @@
  *
  *     clients.store("clients", Storable.LOCAL_STORAGE);
  * </pre>
+ *
+ * For access original Array or Object, you need access to <i>value</i> flied, for example:
+ *
+ * <pre>
+ *     let clientsRetrieveds: Array<Person> = StorableArray.retrieve("clients").value;
+ * </pre>
+ *
+ * And you can set the <i>value</i> field to change the Array or Object contained in this wrapper.
  */
 export class Storable {
     static LOCAL_STORAGE   :number = 1;
