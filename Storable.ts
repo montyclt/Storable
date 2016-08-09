@@ -2,7 +2,7 @@
  * Storable 16.8.9 (09/08/2016) written by Ivan Montilla
  * www.ivanmontilla.es <personal@ivanmontilla.es>
  *
- * This library is free software, you're allowed to study, addapt and redistribute.
+ * This library is free software, you're allowed to study, adapt and redistribute.
  *
  * Ivan Montilla (c) 2016
  *
@@ -11,29 +11,31 @@
  * This library is a parent class that implements methods to store and retrieve Objects
  * to|from LocalStorage and SessionStorage.
  *
- * The usage of this library is very simple, you only need extends this, and call the methods
+ * The usage of this library is very simple, you only need to extend this, and call the methods
  * objet.store(key, storage) and Class.retrieve(key, storage).
  *
- * The most important feauture for this library are that the method retrieve, set the class prototype
- * to retrieved object.
+ * The most important feature in this library is that the retrieve method sets the class into the prototype
+ * of the obtained objects.
  *
  * The storages that the library can use are:
  *
- * Storable.LOCAL_STORAGE -> stores data with no expiration date
- * Storable.SESSION_STORAGE -> stores data for one session (data is lost when the browser tab is closed)
+ * Storable.LOCAL_STORAGE -> stores data with no expiration date.
+ * Storable.SESSION_STORAGE -> stores data for one session (data is lost when the browser tab is closed).
  *
- * Example to retrieve the boss:
- * <pre>
- *     let boss: Person = Person.retrieve("boss", Storable.LOCAL_STORAGE);
- * </pre>
- *
+ * 
  * Example to save a new client:
  * <pre>
  *     let newClient: Person = new Person("Peter");
  *     newClient.store("last_client", Storable.LOCAL_STORAGE);
  * </pre>
+ * 
+ * Example to retrieve the boss:
+ * <pre>
+ *     let boss: Person = Person.retrieve("boss", Storable.LOCAL_STORAGE);
+ * </pre>
  *
- * For use this library with Arrays and Object, you need wraps these in a StorableArray and StorableObject.
+ *
+ * To use this library with Arrays and Objects, you need to wrap these in a StorableArray and StorableObject.
  *
  * Example doing this:
  *
