@@ -35,7 +35,7 @@
  * </pre>
  *
  *
- * To use this library with Arrays and Objects, you need to wrap these in a StorableArray and StorableObject.
+ * To use this library with Arrays and Objects, you need to wrap these into a StorableArray or a StorableObject.
  *
  * Example doing this:
  *
@@ -49,7 +49,7 @@
  *     clients.store("clients", Storable.LOCAL_STORAGE);
  * </pre>
  *
- * For access original Array or Object, you need access to <i>value</i> flied, for example:
+ * For obtaining the original Array or Object, you'll need to access the <i>value</i> field, for example:
  *
  * <pre>
  *     let clientsRetrieveds: Array<Person> = StorableArray.retrieve("clients").value;
@@ -63,6 +63,7 @@ export class Storable {
 
     /**
      * Store object in LocalStorage or SessionStorage.
+     * 
      * @param key string
      * @param storage number
      */
@@ -81,7 +82,8 @@ export class Storable {
     }
 
     /**
-     * Retrieve object to LocalStorage or SessionStorage and return it.
+     * Retrieves an object from LocalStorage or SessionStorage and returns it.
+     * 
      * @param key string
      * @param storage number
      * @returns {any}
@@ -128,7 +130,8 @@ export class StorableArray extends Storable {
     public value: Array<any>;
 
     /**
-     * Construct the Array Wrapper using a Array in parameter.
+     * Construct the Array Wrapper using an Array as the parameter.
+     *
      * @param value
      */
     constructor(value: Array<any>) {
@@ -144,7 +147,7 @@ export class StorableObject extends Storable {
     public value: Object;
 
     /**
-     * Construct the Array Wrapper using a Object in parameter.
+     * Construct the Array Wrapper using an Object as the parameter.
      * @param value
      */
     constructor(value: Object) {
