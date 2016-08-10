@@ -1,5 +1,5 @@
 /**
- * Storable 16.8.9 (09/08/2016) written by Ivan Montilla
+ * Storable 16.8.10 (10/08/2016) written by Ivan Montilla
  * www.ivanmontilla.es <personal@ivanmontilla.es>
  *
  * This library is free software, you're allowed to study, adapt and redistribute.
@@ -68,11 +68,10 @@ export class Storable {
      * @param storage number
      */
     store(key: string, storage: number): void {
-        let strObject: string;
-        strObject = JSON.stringify(this);
         if (storage != Storable.LOCAL_STORAGE && storage != Storable.SESSION_STORAGE)
             throw new RangeError("Storage must be 1 (LOCAL_STORAGE) or 2 (SESSION_STORAGE)");
         else {
+            let strObject: string = JSON.stringify(this);
             if (storage == Storable.LOCAL_STORAGE) {
                 window.localStorage.setItem(key, strObject);
             } else {
