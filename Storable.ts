@@ -85,7 +85,7 @@ export class Storable {
      * 
      * @param key string
      * @param storage number
-     * @returns {any}
+     * @return any
      */
     static retrieve(key: string, storage: number): any {
         if (storage != Storable.LOCAL_STORAGE && storage != Storable.SESSION_STORAGE)
